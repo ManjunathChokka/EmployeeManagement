@@ -1,0 +1,22 @@
+.logout-link {
+  margin-left: 1.5rem;
+  font-size: smaller;
+}
+.tool-bar-container {
+  display: flex;
+  justify-content: start;
+
+  background-color: rgb(0, 86, 91);
+  color: white;
+}
+.example-spacer {
+  display: flex;
+  flex: 1 1 auto;
+}
+.page-header {
+  margin: auto;
+}
+
+.tool-bar-container a {
+  color: white;
+}

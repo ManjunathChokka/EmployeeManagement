@@ -1,0 +1,47 @@
+.logout-link {
+  margin-left: 1.5rem;
+  font-size: smaller;
+}
+.tool-bar-container {
+  display: flex;
+  justify-content: start;
+
+  background-color: rgb(0, 86, 91);
+  color: white;
+  overflow: auto;
+}
+.example-spacer {
+  display: flex;
+  flex: 1 1 auto;
+}
+.page-header {
+  margin: auto;
+}
+
+.tool-bar-container a {
+  color: white;
+}
+
+.table-container {
+  height: 35%;
+  overflow: auto;
+}
+table {
+  width: 100%;
+}
+.mat-column-eID,
+.mat-column-name,
+.mat-column-email,
+.mat-column-experience {
+  width: 25%;
+}
+.mat-column-delete,
+.mat-column-edit {
+  width: 5%;
+}
+
+.add-employee-ctrl {
+  display: flex;
+  margin-right: 0.25rem;
+  justify-content: end;
+}

@@ -1,0 +1,12 @@
+.edit-employee-details-container {
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.success-message {
+  color: blue;
+}
+
+.error-message {
+  color: red;
+}

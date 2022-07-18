@@ -1,0 +1,107 @@
+<div class="add-employee-details-container">
+  <h1>Add Employee Details</h1>
+
+  <!-- employee form -->
+  <div *ngIf="successCondition" class="success-message">
+    <!-- <p>Add Employee Successfully. Please add next Employee Details.</p> -->
+    <p>{{ successMessage }}</p>
+  </div>
+
+  <form
+    class="employee-form"
+    [formGroup]="employeeForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-container">
+      <!-- Employee ID -->
+      <div>
+        <mat-form-field>
+          <mat-label>Employee ID</mat-label>
+          <input
+            matInput
+            type="text"
+            name="employeeId"
+            formControlName="employeeId"
+            [readonly]="true"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- Employee Name -->
+      <div>
+        <mat-form-field>
+          <mat-label>Employee Name</mat-label>
+          <input
+            matInput
+            type="text"
+            name="employeeName"
+            formControlName="employeeName"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="
+            !employeeName?.valid &&
+            (employeeName?.dirty || employeeName?.touched)
+          "
+          class="error-message"
+        >
+          Length should be at least 4 and should not exceed more than 25
+          characters.
+        </span>
+      </div>
+
+      <!-- Employee Email -->
+      <div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            type="Email"
+            name="employeeEmail"
+            formControlName="employeeEmail"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="
+            !employeeEmail?.valid &&
+            (employeeEmail?.dirty || employeeEmail?.touched)
+          "
+          class="error-message"
+        >
+          Please Enter a valid Email Id.
+        </span>
+      </div>
+
+      <!-- Employee experience -->
+      <div>
+        <mat-form-field>
+          <mat-label>Experience</mat-label>
+          <input
+            matInput
+            type="number"
+            name="experience"
+            formControlName="experience"
+          />
+        </mat-form-field>
+        <span
+          *ngIf="
+            !experience?.valid && (experience?.dirty || experience?.touched)
+          "
+        >
+          <span *ngIf="experience?.errors?.['isError']" class="error-message">
+            {{ experience?.errors?.['msg'] }}
+          </span>
+        </span>
+      </div>
+
+      <div>
+        <!-- Submit Butoon -->
+        <button mat-button color="primary" type="submit">Save</button>
+        <!-- Reset Button-->
+        <button mat-button color="primary" type="button" (click)="onReset()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

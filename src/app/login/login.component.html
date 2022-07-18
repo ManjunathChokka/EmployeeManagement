@@ -1,0 +1,53 @@
+<mat-toolbar class="tool-bar-container">
+  <span>Employee Management</span>
+</mat-toolbar>
+
+<!-- login form -->
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-container">
+    <!-- Login ID -->
+    <div>
+      <mat-form-field>
+        <mat-label>Login ID</mat-label>
+        <input matInput type="text" name="loginId" formControlName="loginId" />
+      </mat-form-field>
+    </div>
+
+    <!-- Login Password -->
+    <div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          name="password"
+          formControlName="password"
+        />
+      </mat-form-field>
+    </div>
+
+    <ng-container *ngIf="isError">
+      <div>
+        <p class="err-msg">
+          Either Login ID or Password is incorrect. Please try again.
+        </p>
+      </div>
+    </ng-container>
+
+    <div>
+      <!-- Login Butoon -->
+      <button
+        mat-button
+        color="primary"
+        type="submit"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+      <!-- Reset Button-->
+      <button mat-button color="primary" type="button" (click)="onReset()">
+        Reset
+      </button>
+    </div>
+  </div>
+</form>
